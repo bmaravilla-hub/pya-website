@@ -1,0 +1,120 @@
+/* Interactive Thumbnail Gallery Styles */
+
+.gallery-wrapper {
+    width: 70vmin;
+    height: 90vmin;
+    margin: 0 auto;
+    max-width: 800px;
+    max-height: 1100px;
+}
+
+.thumbnails-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    --barH: 10%;
+    /* active zone height = 100% - barH */
+    perspective: 100px;
+    perspective-origin: center center;
+    transform-style: preserve-3d;
+    pointer-events: none;
+}
+
+.thumbnails-container::after {
+    /* the plate */
+    content: "";
+    display: block;
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.1));
+    transform: rotateX(90deg) scaleX(1.2);
+    transform-origin: bottom center;
+}
+
+.thumbnail-item {
+    --w: 20%;
+    display: block;
+    width: var(--w);
+    height: var(--barH);
+    position: absolute;
+    bottom: 0;
+    left: var(--l);
+    transform-origin: top left;
+    transition: transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 1s;
+}
+
+.thumbnail-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(0.9);
+    /* create gaps */
+}
+
+[type="radio"].gallery-radio {
+    display: none;
+}
+
+:checked+label.thumbnail-item {
+    left: 0;
+    bottom: var(--barH);
+    height: calc(100% - var(--barH));
+    box-shadow: 0 0 0 transparent;
+    animation: expandAnim 2s 1;
+    transition: transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 0s;
+}
+
+:checked+label.thumbnail-item img {
+    object-fit: contain;
+    transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover effect on expanded image - Realce más pronunciado */
+:checked+label.thumbnail-item:hover img {
+    transform: scale(1.15);
+    filter: brightness(1.1) contrast(1.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    cursor: zoom-in;
+}
+
+@keyframes expandAnim {
+    from {
+        transform: rotateY(6deg) rotateX(3deg);
+    }
+}
+
+/* Inactive labels */
+:not(:checked)+.thumbnail-item {
+    transform: translate3d(0, 0, -5px);
+    pointer-events: auto;
+}
+
+:not(:checked)+.thumbnail-item:hover {
+    transform: translate3d(0, -7px, -5px);
+    box-shadow: 0 30px 30px -25px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 0s;
+}
+
+:not(:checked)+.thumbnail-item img {
+    transform: scale(0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-wrapper {
+        width: 90vw;
+        height: 70vh;
+        min-height: 500px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .gallery-wrapper {
+        width: 65vmin;
+        height: 85vmin;
+    }
+}

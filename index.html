@@ -1,727 +1,587 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Punto&Aparte</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body>
-    <!-- Header con Navbar -->
-    <header class="header-custom">
-      <div class="container">
-        <div class="header-content">
-          <a href="index.html" class="logo-link">
-            <img alt="Logo" class="logo-img" src="img/header/LOGOO.png" />
-          </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Punto&Aparte</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/expanding-cards.css" />
+</head>
 
-          <!-- Navegación Desktop -->
-          <nav class="desktop-nav">
-            <div class="nav-group">
-              <a href="index.html" class="nav-link">Inicio</a>
-              <span class="nav-underline"></span>
-            </div>
-            <div class="nav-group">
-              <a href="#servicios" class="nav-link">Servicios</a>
-              <span class="nav-underline"></span>
-            </div>
-            <div class="nav-group">
-              <a href="#nosotros" class="nav-link">Nosotros</a>
-              <span class="nav-underline"></span>
-            </div>
-            <div class="nav-group">
-              <a href="#servicios-detalle" class="nav-link">Productos</a>
-              <span class="nav-underline"></span>
-            </div>
-            <div class="nav-group">
-              <a href="#proyectos" class="nav-link">Proyectos</a>
-              <span class="nav-underline"></span>
-            </div>
-            <div class="nav-group">
-              <a href="#contacto" class="nav-link">Contáctanos</a>
-              <span class="nav-underline"></span>
-            </div>
-          </nav>
+<body>
+  <!-- Header con Navbar -->
+  <header class="header-custom">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo-link">
+          <img alt="Logo" class="logo-img" src="img/header/LOGOO.png" />
+        </a>
 
-          <!-- Botón Menú Mobile -->
-          <button class="mobile-menu-btn" aria-label="Menu">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              class="menu-icon"
-            >
-              <path
-                d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
-              ></path>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Menú Mobile -->
-        <div class="mobile-nav-container">
-          <div class="mobile-nav-content">
-            <a href="index.html" class="mobile-nav-link">Inicio</a>
-            <a href="#desarrollo-producto-section" class="mobile-nav-link"
-              >Servicios</a
-            >
-            <a href="#nosotros" class="mobile-nav-link">Nosotros</a>
-            <a href="#servicios" class="mobile-nav-link">Productos</a>
-            <a href="#proyectos" class="mobile-nav-link">Proyectos</a>
-            <a href="#contacto" class="mobile-nav-link">Contáctanos</a>
+        <!-- Navegación Desktop -->
+        <nav class="desktop-nav">
+          <div class="nav-group">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <span class="nav-underline"></span>
           </div>
-        </div>
+          <div class="nav-group">
+            <a href="#servicios" class="nav-link">Servicios</a>
+            <span class="nav-underline"></span>
+          </div>
+          <div class="nav-group">
+            <a href="#nosotros" class="nav-link">Nosotros</a>
+            <span class="nav-underline"></span>
+          </div>
+          <div class="nav-group">
+            <a href="#servicios-detalle" class="nav-link">Productos</a>
+            <span class="nav-underline"></span>
+          </div>
+          <div class="nav-group">
+            <a href="#proyectos" class="nav-link">Proyectos</a>
+            <span class="nav-underline"></span>
+          </div>
+          <div class="nav-group">
+            <a href="#contacto" class="nav-link">Contáctanos</a>
+            <span class="nav-underline"></span>
+          </div>
+        </nav>
+
+        <!-- Botón Menú Mobile -->
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="menu-icon">
+            <path
+              d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+            </path>
+          </svg>
+        </button>
       </div>
 
-      <!-- Carrusel Corregido -->
-      <div class="carousel-wrapper">
-        <div class="custom-carousel-container">
-          <!-- Slide 1 - Vivimos tu Marca -->
-          <div class="carousel-slide active">
-            <div
-              class="slide-bg"
-              style="background-image: url('img/header/banner1.png')"
-            ></div>
-            <div class="slide-content">
-              <div class="text-content">
-                <h3 class="slide-title">Vivimos tu Marca</h3>
-                <p class="slide-description"></p>
-              </div>
+      <!-- Menú Mobile -->
+      <div class="mobile-nav-container">
+        <div class="mobile-nav-content">
+          <a href="index.html" class="mobile-nav-link">Inicio</a>
+          <a href="#desarrollo-producto-section" class="mobile-nav-link">Servicios</a>
+          <a href="#nosotros" class="mobile-nav-link">Nosotros</a>
+          <a href="#servicios" class="mobile-nav-link">Productos</a>
+          <a href="#proyectos" class="mobile-nav-link">Proyectos</a>
+          <a href="#contacto" class="mobile-nav-link">Contáctanos</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrusel Corregido -->
+    <div class="carousel-wrapper">
+      <div class="custom-carousel-container">
+        <!-- Slide 1 - Vivimos tu Marca -->
+        <div class="carousel-slide active">
+          <div class="slide-bg" style="background-image: url('img/header/banner1.png')"></div>
+          <div class="slide-content">
+            <div class="text-content">
+              <h3 class="slide-title">Vivimos tu Marca</h3>
+              <p class="slide-description"></p>
             </div>
           </div>
+        </div>
 
-          <!-- Slide 2 - Especialistas en POP -->
-          <div class="carousel-slide">
-            <div
-              class="slide-bg"
-              style="background-image: url('img/header/banner2.png')"
-            ></div>
-            <div class="slide-content">
-              <div class="text-content">
-                <h3 class="slide-title">Especialistas en POP</h3>
-                <p class="slide-description"></p>
-              </div>
+        <!-- Slide 2 - Especialistas en POP con Collage -->
+        <div class="carousel-slide">
+          <div class="slide-bg" style="background-image: url('img/header/collage_1_V1.jpg')"></div>
+          <div class="slide-content">
+            <div class="text-content">
+              <h3 class="slide-title">Especialistas en POP</h3>
+              <p class="slide-description"></p>
             </div>
           </div>
+        </div>
 
-          <!-- Slide 3 - Recorremos millas por ti -->
-          <div class="carousel-slide">
-            <div
-              class="slide-bg"
-              style="
+        <!-- Slide 3 - Recorremos millas por ti -->
+        <div class="carousel-slide">
+          <div class="slide-bg" style="
                 background-image: url('img/header/banner2.png');
                 background-size: 115% 115%; /* Más grande */
                 background-position: center;
-              "
-            ></div>
-            <div class="slide-content">
-              <div class="text-content">
-                <h3 class="slide-title">Recorremos millas por ti</h3>
-                <p class="slide-description"></p>
-              </div>
+              "></div>
+          <div class="slide-content">
+            <div class="text-content">
+              <h3 class="slide-title">Recorremos millas por ti</h3>
+              <p class="slide-description"></p>
             </div>
           </div>
+        </div>
 
-          <!-- Controles manuales -->
-          <button class="carousel-control prev-btn" aria-label="Anterior">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 320 512"
-              class="control-icon"
-            >
-              <path
-                d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"
-              ></path>
-            </svg>
+        <!-- Controles manuales -->
+        <button class="carousel-control prev-btn" aria-label="Anterior">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="control-icon">
+            <path
+              d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
+            </path>
+          </svg>
+        </button>
+
+        <button class="carousel-control next-btn" aria-label="Siguiente">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="control-icon">
+            <path
+              d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+            </path>
+          </svg>
+        </button>
+
+        <!-- Indicadores -->
+        <div class="carousel-indicators-custom">
+          <button class="indicator active" aria-label="Ir al slide 1"></button>
+          <button class="indicator" aria-label="Ir al slide 2"></button>
+          <button class="indicator" aria-label="Ir al slide 3"></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Nueva Sección: Desarrollo de Producto -->
+  <section class="desarrollo-producto-section" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nuestros Servicios</h2>
+      </div>
+
+      <div class="servicios-grid">
+        <!-- 1. Diseño e ingeniería de productos -->
+        <div class="servicio-card" data-service="diseno">
+          <div class="servicio-icon">
+            <i class="bi bi-lightbulb"></i>
+          </div>
+          <h3 class="servicio-title">Diseño e ingeniería de productos</h3>
+          <p class="servicio-description">
+            Contamos con 30 años de experiencia y un equipo multidisciplinario
+            en brindar soluciones personalizadas a la necesidad de cada marca.
+          </p>
+          <div class="service-hover-effect"></div>
+        </div>
+
+        <!-- 2. Prototipo -->
+        <div class="servicio-card" data-service="prototipo">
+          <div class="servicio-icon">
+            <i class="bi bi-layers"></i>
+          </div>
+          <h3 class="servicio-title">Prototipo</h3>
+          <p class="servicio-description">
+            Contamos con procesos de diseño y desarrollo de producto para
+            lograr que tu idea cumpla con todos los parámetros y requisitos
+            para ser implementados.
+          </p>
+          <div class="service-hover-effect"></div>
+        </div>
+
+        <!-- 3. Producción -->
+        <div class="servicio-card" data-service="produccion">
+          <div class="servicio-icon">
+            <i class="bi bi-gear-fill"></i>
+          </div>
+          <h3 class="servicio-title">Producción</h3>
+          <p class="servicio-description">
+            Combinamos la experiencia especializada y tecnología moderna para
+            producir materiales publicitarios que impactan, ejecutándolos de
+            forma eficiente y en volumen
+          </p>
+          <div class="service-hover-effect"></div>
+        </div>
+
+        <!-- 4. Instalación -->
+        <div class="servicio-card" data-service="instalacion">
+          <div class="servicio-icon">
+            <i class="bi bi-tools"></i>
+          </div>
+          <h3 class="servicio-title">Instalación</h3>
+          <p class="servicio-description">
+            Ofrecemos servicios de instalación ejecutados por especialistas.
+            Atendemos proyectos en todo el país, con atención en cadenas de
+            supermercados y canales de mayoreo.
+          </p>
+          <div class="service-hover-effect"></div>
+        </div>
+
+        <!-- 5. Puerta a Puerta -->
+        <div class="servicio-card" data-service="logistica">
+          <div class="servicio-icon">
+            <i class="bi bi-truck"></i>
+          </div>
+          <h3 class="servicio-title">Puerta a Puerta</h3>
+          <p class="servicio-description">
+            Contamos con amplia experiencia en exportación a la región CA,
+            garantizando entregas a tiempo y aliados estratégicos para
+            despachos internacionales
+          </p>
+          <div class="service-hover-effect"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Sobre Nosotros -->
+  <section class="sobre-nosotros-section" id="nosotros">
+    <div class="container">
+      <div class="sobre-nosotros-content">
+        <!-- Texto a la izquierda -->
+        <div class="nosotros-text">
+          <h2 class="nosotros-title">SOBRE NOSOTROS</h2>
+          <div class="nosotros-description">
+            <p>
+              PUNTO Y APARTE nace de terminar la monotonía de las publicidades
+              en las formas tradicionales que ya conocemos, como lo son los
+              medios de televisión y radio, dándole un impacto a la industria
+              publicitaria y poniendo PUNTO Y APARTE a lo convencional.
+            </p>
+            <p>
+              Como empresa nos hemos consolidado como un referente en el
+              desarrollo de material visual de alto impacto, entendiendo las
+              necesidades de cada marca y proponiendo soluciones visuales
+              innovadoras que destacan en el punto de venta, donde la calidad
+              y el servicio son siempre nuestra prioridad.
+            </p>
+          </div>
+          <button class="conoce-mas-btn">
+            <a href="pages/nosotros.html">CONOCER MÁS</a>
+            <div class="btn-hover-effect"></div>
           </button>
+        </div>
 
-          <button class="carousel-control next-btn" aria-label="Siguiente">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 320 512"
-              class="control-icon"
-            >
-              <path
-                d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
-              ></path>
-            </svg>
-          </button>
-
-          <!-- Indicadores -->
-          <div class="carousel-indicators-custom">
-            <button
-              class="indicator active"
-              aria-label="Ir al slide 1"
-            ></button>
-            <button class="indicator" aria-label="Ir al slide 2"></button>
-            <button class="indicator" aria-label="Ir al slide 3"></button>
+        <!-- Imagen/Ilustración a la derecha -->
+        <div class="nosotros-visual">
+          <div class="visual-container-static">
+            <img src="./img/photos/image.png" alt="Equipo Punto Aparte" class="team-image-horizontal" />
           </div>
         </div>
       </div>
-    </header>
+    </div>
 
-    <!-- Nueva Sección: Desarrollo de Producto -->
-    <section class="desarrollo-producto-section" id="servicios">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Nuestros Servicios</h2>
-        </div>
+    <!-- Elementos decorativos de fondo -->
+    <div class="background-elements">
+      <div class="bg-circle circle-1"></div>
+      <div class="bg-circle circle-2"></div>
+      <div class="bg-circle circle-3"></div>
+      <div class="bg-square square-1"></div>
+      <div class="bg-square square-2"></div>
+    </div>
+  </section>
 
-        <div class="servicios-grid">
-          <!-- 1. Diseño e ingeniería de productos -->
-          <div class="servicio-card" data-service="diseno">
-            <div class="servicio-icon">
-              <i class="bi bi-lightbulb"></i>
-            </div>
-            <h3 class="servicio-title">Diseño e ingeniería de productos</h3>
-            <p class="servicio-description">
-              Contamos con 30 años de experiencia y un equipo multidisciplinario
-              en brindar soluciones personalizadas a la necesidad de cada marca.
-            </p>
-            <div class="service-hover-effect"></div>
-          </div>
-
-          <!-- 2. Prototipo -->
-          <div class="servicio-card" data-service="prototipo">
-            <div class="servicio-icon">
-              <i class="bi bi-layers"></i>
-            </div>
-            <h3 class="servicio-title">Prototipo</h3>
-            <p class="servicio-description">
-              Contamos con procesos de diseño y desarrollo de producto para
-              lograr que tu idea cumpla con todos los parámetros y requisitos
-              para ser implementados.
-            </p>
-            <div class="service-hover-effect"></div>
-          </div>
-
-          <!-- 3. Producción -->
-          <div class="servicio-card" data-service="produccion">
-            <div class="servicio-icon">
-              <i class="bi bi-gear-fill"></i>
-            </div>
-            <h3 class="servicio-title">Producción</h3>
-            <p class="servicio-description">
-              Combinamos la experiencia especializada y tecnología moderna para
-              producir materiales publicitarios que impactan, ejecutándolos de
-              forma eficiente y en volumen
-            </p>
-            <div class="service-hover-effect"></div>
-          </div>
-
-          <!-- 4. Instalación -->
-          <div class="servicio-card" data-service="instalacion">
-            <div class="servicio-icon">
-              <i class="bi bi-tools"></i>
-            </div>
-            <h3 class="servicio-title">Instalación</h3>
-            <p class="servicio-description">
-              Ofrecemos servicios de instalación ejecutados por especialistas.
-              Atendemos proyectos en todo el país, con atención en cadenas de
-              supermercados y canales de mayoreo.
-            </p>
-            <div class="service-hover-effect"></div>
-          </div>
-
-          <!-- 5. Puerta a Puerta -->
-          <div class="servicio-card" data-service="logistica">
-            <div class="servicio-icon">
-              <i class="bi bi-truck"></i>
-            </div>
-            <h3 class="servicio-title">Puerta a Puerta</h3>
-            <p class="servicio-description">
-              Contamos con amplia experiencia en exportación a la región CA,
-              garantizando entregas a tiempo y aliados estratégicos para
-              despachos internacionales
-            </p>
-            <div class="service-hover-effect"></div>
-          </div>
-        </div>
+  <!-- Sección Nuestros Servicios -->
+  <section class="servicios-section" id="servicios-detalle">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">NUESTROS PRODUCTOS</h2>
       </div>
-    </section>
 
-    <!-- Sección Sobre Nosotros -->
-    <section class="sobre-nosotros-section" id="nosotros">
-      <div class="container">
-        <div class="sobre-nosotros-content">
-          <!-- Texto a la izquierda -->
-          <div class="nosotros-text">
-            <h2 class="nosotros-title">SOBRE NOSOTROS</h2>
-            <div class="nosotros-description">
-              <p>
-                PUNTO Y APARTE nace de terminar la monotonía de las publicidades
-                en las formas tradicionales que ya conocemos, como lo son los
-                medios de televisión y radio, dándole un impacto a la industria
-                publicitaria y poniendo PUNTO Y APARTE a lo convencional.
-              </p>
-              <p>
-                Como empresa nos hemos consolidado como un referente en el
-                desarrollo de material visual de alto impacto, entendiendo las
-                necesidades de cada marca y proponiendo soluciones visuales
-                innovadoras que destacan en el punto de venta, donde la calidad
-                y el servicio son siempre nuestra prioridad.
-              </p>
+      <div class="servicios-cards">
+        <!-- Servicio 1: Rotulación e Instalación -->
+        <div class="servicio-detalle-card">
+          <div class="servicio-header">
+            <h3 class="servicio-nombre">ROTULACIÓN E INSTALACIÓN</h3>
+            <div class="servicio-imagen">
+              <img src="img/ROTULACION E INSTALACIONES/VPDG-SUAVITEL-Principal.png" alt="Rotulación e Instalación" />
             </div>
-            <button class="conoce-mas-btn">
-              <a href="pages/nosotros.html">CONOCER MÁS</a>
-              <div class="btn-hover-effect"></div>
+          </div>
+          <div class="servicio-content">
+            <button class="servicio-btn">
+              <a href="pages/rotulacion-instalacion.html">CONOCER MÁS</a>
+              <i class="bi bi-arrow-right"></i>
             </button>
           </div>
+        </div>
 
-          <!-- Imagen/Ilustración a la derecha -->
-          <div class="nosotros-visual">
-            <div class="visual-container-static">
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                alt="Equipo Punto Aparte"
-                class="team-image-horizontal"
-              />
+        <!-- Servicio 2: Muebles Exhibidores -->
+        <div class="servicio-detalle-card">
+          <div class="servicio-header">
+            <h3 class="servicio-nombre">MUEBLES EXHIBIDORES</h3>
+            <div class="servicio-imagen">
+              <img src="img/MUEBLES EXHIBIDORES/MUEBLE-PUNTA-SABA-PRINCIPAL.png" alt="Muebles Exhibidores" />
             </div>
+          </div>
+          <div class="servicio-content">
+            <button class="servicio-btn">
+              <a href="pages/muebles-exhibidores.html">CONOCER MÁS</a>
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Servicio 3: POP -->
+        <div class="servicio-detalle-card">
+          <div class="servicio-header">
+            <h3 class="servicio-nombre">POP</h3>
+            <br />
+            <div class="servicio-imagen">
+              <img src="img/POP/MARCO_COLGATE- Principal.png" alt="Material POP" />
+            </div>
+          </div>
+          <div class="servicio-content">
+            <button class="servicio-btn">
+              <a href="pages/pop.html">CONOCER MÁS</a>
+              <i class="bi bi-arrow-right"></i>
+            </button>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Elementos decorativos de fondo -->
-      <div class="background-elements">
-        <div class="bg-circle circle-1"></div>
-        <div class="bg-circle circle-2"></div>
-        <div class="bg-circle circle-3"></div>
-        <div class="bg-square square-1"></div>
-        <div class="bg-square square-2"></div>
-      </div>
-    </section>
-
-    <!-- Sección Nuestros Servicios -->
-    <section class="servicios-section" id="servicios-detalle">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">NUESTROS PRODUCTOS</h2>
-        </div>
-
-        <div class="servicios-cards">
-          <!-- Servicio 1: Rotulación e Instalación -->
-          <div class="servicio-detalle-card">
-            <div class="servicio-header">
-              <h3 class="servicio-nombre">ROTULACIÓN E INSTALACIÓN</h3>
-              <div class="servicio-imagen">
-                <img
-                  src="img/ROTULACION E INSTALACIONES/VPDG-SUAVITEL-Principal.png"
-                  alt="Rotulación e Instalación"
-                />
-              </div>
-            </div>
-            <div class="servicio-content">
-              <button class="servicio-btn">
-                <a href="pages/rotulacion-instalacion.html">CONOCER MÁS</a>
-                <i class="bi bi-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Servicio 2: Muebles Exhibidores -->
-          <div class="servicio-detalle-card">
-            <div class="servicio-header">
-              <h3 class="servicio-nombre">MUEBLES EXHIBIDORES</h3>
-              <div class="servicio-imagen">
-                <img
-                  src="img/MUEBLES EXHIBIDORES/MUEBLE-PUNTA-SABA-PRINCIPAL.png"
-                  alt="Muebles Exhibidores"
-                />
-              </div>
-            </div>
-            <div class="servicio-content">
-              <button class="servicio-btn">
-                <a href="pages/muebles-exhibidores.html">CONOCER MÁS</a>
-                <i class="bi bi-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Servicio 3: POP -->
-          <div class="servicio-detalle-card">
-            <div class="servicio-header">
-              <h3 class="servicio-nombre">POP</h3>
-              <br />
-              <div class="servicio-imagen">
-                <img
-                  src="img/POP/MARCO_COLGATE- Principal.png"
-                  alt="Material POP"
-                />
-              </div>
-            </div>
-            <div class="servicio-content">
-              <button class="servicio-btn">
-                <a href="pages/pop.html">CONOCER MÁS</a>
-                <i class="bi bi-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN: NUESTROS PROYECTOS - EXPANDING GALLERY -->
-    <section class="proyectos-section" id="proyectos">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">NUESTROS PROCESOS</h2>
-          <p class="section-subtitle">
-            Descubre nuestras iniciativas más destacadas y cómo estamos
-            transformando ideas en realidad
-          </p>
-        </div>
-
-        <!-- Nueva expanding gallery -->
-        <div class="expanding-gallery">
-          <div class="gallery-item">
-            <img
-              src="img/NUESTROS PROCESOS/1 PROCESO_DISENO.png"
-              alt="Proyecto"
-            />
-            <div class="project-overlay">
-              <h3>Diseño e innovación</h3>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="img/NUESTROS PROCESOS/2 PROTOTIPO.png" alt="Proyecto" />
-            <div class="project-overlay">
-              <h3>Prototipo</h3>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="img/NUESTROS PROCESOS/3 CAMA PLANA.png" alt="Proyecto" />
-            <div class="project-overlay">
-              <h3>Impresión en cama plana</h3>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="img/NUESTROS PROCESOS/4 CORTE ROBOTIZADO.png"
-              alt="Proyecto"
-            />
-            <div class="project-overlay">
-              <h3>Corte robotizado</h3>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="img/NUESTROS PROCESOS/5 CORTE_LASER.png" alt="Proyecto" />
-            <div class="project-overlay">
-              <h3>Corte laser</h3>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="img/NUESTROS PROCESOS/6 METAL MECÁNICA.png"
-              alt="Proyecto"
-            />
-            <div class="project-overlay">
-              <h3>Metal mecánica</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN: NUESTROS CLIENTES -->
-    <section class="clientes-section" id="clientes">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">NUESTROS CLIENTES</h2>
-        </div>
-
-        <div class="clientes-carousel">
-          <div class="clientes-track">
-            <!-- Primera tanda de logos -->
-            <div class="cliente-logo">
-              <img src="img/clientes/dinant.png" alt="DINANT" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/bimbo.png" alt="BIMBO" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/diana.png" alt="DIANA" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/nestle.png" alt="NESTLE" />
-            </div>
-
-            <div class="cliente-logo">
-              <img src="img/clientes/colgate.png" alt="COLGATE" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/essity.png" alt="ESSITY" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/movistar.png" alt="MOVISTAR" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/mondelezz.png" alt="MONDELEZ" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/mccormick.png" alt="MCCORMICK" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/johnsons.png" alt="JOHNSONS" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/bayer.png" alt="BAYER" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/Logo PyG.jpeg" alt="PyG" />
-            </div>
-            <div class="cliente-logo">
-              <img
-                src="img/clientes/logo Kimberly Clark.png"
-                alt="Kimberly Clark"
-              />
-            </div>
-
-            <!-- Segunda tanda (duplicada para efecto continuo) -->
-            <div class="cliente-logo">
-              <img src="img/clientes/dinant.png" alt="DINANT" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/bimbo.png" alt="BIMBO" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/diana.png" alt="DIANA" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/nestle.png" alt="NESTLE" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/colgate.png" alt="COLGATE" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/essity.png" alt="ESSITY" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/movistar.png" alt="MOVISTAR" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/mondelezz.png" alt="MONDELEZ" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/mccormick.png" alt="MCCORMICK" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/johnsons.png" alt="JOHNSONS" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/bayer.png" alt="BAYER" />
-            </div>
-            <div class="cliente-logo">
-              <img src="img/clientes/Logo PyG.jpeg" alt="PyG" />
-            </div>
-            <div class="cliente-logo">
-              <img
-                src="img/clientes/logo Kimberly Clark.png"
-                alt="Kimberly Clark"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección Contacto -->
-    <section id="contacto" class="contacto-section">
-      <div class="contacto-container">
-        <!-- Columna izquierda -->
-        <div class="contacto-info">
-          <div class="contacto-box">
-            <div class="logo-wrapper">
-              <img alt="logo" class="contacto-logo" src="img/LOGO pya-02.svg" />
-            </div>
-            <div class="contacto-text">
-              <h4>Posicionemos tu marca</h4>
-              <p>Consolidemos tu liderazgo de marca en los Puntos de Venta</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Columna derecha (formulario) -->
-        <div class="contacto-form">
-          <form action="">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input
-                  id="nombre"
-                  name="nombre"
-                  type="text"
-                  placeholder="Ingresa tu primer nombre"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="apellido">Apellido</label>
-                <input
-                  id="apellido"
-                  name="apellido"
-                  type="text"
-                  placeholder="Ingresa tu apellido"
-                  required
-                />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Ingresa tu Email"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <input
-                  id="telefono"
-                  name="telefono"
-                  type="tel"
-                  placeholder="Ingresa tu teléfono"
-                  required
-                />
-              </div>
-            </div>
-            <div class="form-group full">
-              <label for="mensaje">Mensaje</label>
-              <textarea
-                id="mensaje"
-                name="mensaje"
-                placeholder="Escribe tu mensaje"
-                required
-              ></textarea>
-              <button type="submit" class="btn-enviar">Enviar</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer Nuevo -->
-    <footer class="footer-custom">
-      <div class="container footer-grid">
-        <div class="footer-logo">
-          <img src="img/LOGO pya-02.svg" alt="Logo PuntoAparte" />
-          <p>Posicionamos tu marca en el punto de venta.</p>
-        </div>
-        <div class="footer-links">
-          <h4>Enlaces rápidos</h4>
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="#producto">Servicios</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#servicios">Productos</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contáctanos</a></li>
-          </ul>
-        </div>
-        <div class="footer-social">
-          <h4>Síguenos</h4>
-          <a href="https://www.facebook.com/PuntoyApartePOP/?locale=es_LA"
-            ><i class="bi bi-facebook"></i
-          ></a>
-          <a href="https://www.instagram.com/puntoyapartepop/"
-            ><i class="bi bi-instagram"></i
-          ></a>
-          <a href="https://wa.me/+50378354406"
-            ><i class="bi bi-whatsapp"></i
-          ></a>
-          <br />
-          <br />
-          <div class="flex items-center gap-2 font-medium">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 24 24"
-              height="20"
-              width="20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path fill="none" d="M0 0h24v24H0z"></path>
-              <path
-                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
-              ></path>
-            </svg>
-            <p>Info@puntoyaparte.com.sv</p>
-          </div>
-          <div class="flex items-center gap-2 font-medium">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 24 24"
-              height="20"
-              width="20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path fill="none" d="M0 0h24v24H0z"></path>
-              <path
-                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-              ></path>
-            </svg>
-            <p>2235-3057</p>
-          </div>
-          <div class="flex items-center gap-2 font-medium">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 24 24"
-              height="20"
-              width="20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path fill="none" d="M0 0h24v24H0z"></path>
-              <path
-                d="M17 1.01 7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"
-              ></path>
-            </svg>
-            <p>+503 7835-4406</p>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>
-          &copy; 2025 Punto&Aparte by KerbrumAgency - Todos los derechos
-          reservados.
+  <!-- SECCIÓN: NUESTROS PROYECTOS - EXPANDING GALLERY -->
+  <section class="proyectos-section" id="proyectos">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">NUESTROS PROCESOS</h2>
+        <p class="section-subtitle">
+          Descubre nuestras iniciativas más destacadas y cómo estamos
+          transformando ideas en realidad
         </p>
       </div>
-    </footer>
 
-    <button
-      id="scrollToTopBtn"
-      class="scroll-to-top"
-      aria-label="Volver arriba"
-      title="Volver arriba"
-    >
-      <i class="bi bi-chevron-up"></i>
-    </button>
+      <!-- Expanding Cards Gallery -->
+      <div class="expanding-cards-container">
+        <div class="card">
+          <img src="img/NUESTROS PROCESOS/1 PROCESO_DISENO.png" alt="Diseño e innovación" />
+          <div class="card__head">Diseño e innovación</div>
+        </div>
+        <div class="card">
+          <img src="img/NUESTROS PROCESOS/2 PROTOTIPO.png" alt="Prototipo" />
+          <div class="card__head">Prototipo</div>
+        </div>
+        <div class="card">
+          <img src="img/NUESTROS PROCESOS/3 CAMA PLANA.png" alt="Impresión en cama plana" />
+          <div class="card__head">Impresión en cama plana</div>
+        </div>
+        <div class="card">
+          <img src="img/NUESTROS PROCESOS/4 CORTE ROBOTIZADO.png" alt="Corte robotizado" />
+          <div class="card__head">Corte robotizado</div>
+        </div>
+        <div class="card">
+          <img src="img/NUESTROS PROCESOS/5 CORTE_LASER.png" alt="Corte laser" />
+          <div class="card__head">Corte laser</div>
+        </div>
+        <div class="card">
+          <img src="img/NUESTROS PROCESOS/6 METAL MECÁNICA.png" alt="Metal mecánica" />
+          <div class="card__head">Metal mecánica</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <!-- SECCIÓN: NUESTROS CLIENTES -->
+  <section class="clientes-section" id="clientes">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">NUESTROS CLIENTES</h2>
+      </div>
+
+      <div class="clientes-carousel">
+        <div class="clientes-track">
+          <!-- Primera tanda de logos -->
+          <div class="cliente-logo">
+            <img src="img/clientes/dinant.png" alt="DINANT" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/bimbo.png" alt="BIMBO" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/diana.png" alt="DIANA" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/nestle.png" alt="NESTLE" />
+          </div>
+
+          <div class="cliente-logo">
+            <img src="img/clientes/colgate.png" alt="COLGATE" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/essity.png" alt="ESSITY" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/movistar.png" alt="MOVISTAR" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/mondelezz.png" alt="MONDELEZ" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/mccormick.png" alt="MCCORMICK" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/johnsons.png" alt="JOHNSONS" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/bayer.png" alt="BAYER" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/Logo PyG.jpeg" alt="PyG" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/logo Kimberly Clark.png" alt="Kimberly Clark" />
+          </div>
+
+          <!-- Segunda tanda (duplicada para efecto continuo) -->
+          <div class="cliente-logo">
+            <img src="img/clientes/dinant.png" alt="DINANT" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/bimbo.png" alt="BIMBO" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/diana.png" alt="DIANA" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/nestle.png" alt="NESTLE" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/colgate.png" alt="COLGATE" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/essity.png" alt="ESSITY" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/movistar.png" alt="MOVISTAR" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/mondelezz.png" alt="MONDELEZ" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/mccormick.png" alt="MCCORMICK" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/johnsons.png" alt="JOHNSONS" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/bayer.png" alt="BAYER" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/Logo PyG.jpeg" alt="PyG" />
+          </div>
+          <div class="cliente-logo">
+            <img src="img/clientes/logo Kimberly Clark.png" alt="Kimberly Clark" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Contacto -->
+  <section id="contacto" class="contacto-section">
+    <div class="contacto-container">
+      <!-- Columna izquierda -->
+      <div class="contacto-info">
+        <div class="contacto-box">
+          <div class="logo-wrapper">
+            <img alt="logo" class="contacto-logo" src="img/LOGO pya-02.svg" />
+          </div>
+          <div class="contacto-text">
+            <p>Consolidemos tu liderazgo de marca en los Puntos de Venta</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha (formulario) -->
+      <div class="contacto-form">
+        <form action="">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" placeholder="Ingresa tu primer nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="apellido">Apellido</label>
+              <input id="apellido" name="apellido" type="text" placeholder="Ingresa tu apellido" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="Ingresa tu Email" required />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input id="telefono" name="telefono" type="tel" placeholder="Ingresa tu teléfono" required />
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+            <button type="submit" class="btn-enviar">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Nuevo -->
+  <footer class="footer-custom">
+    <div class="container footer-grid">
+      <div class="footer-logo">
+        <img src="img/LOGO pya-02.svg" alt="Logo PuntoAparte" />
+      </div>
+      <div class="footer-links">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios-detalle" class="nav-link">Productos</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contáctanos</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+        <a href="https://www.facebook.com/PuntoyApartePOP/?locale=es_LA"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/puntoyapartepop/"><i class="bi bi-instagram"></i></a>
+        <a href="https://wa.me/+50378354406"><i class="bi bi-whatsapp"></i></a>
+        <br />
+        <br />
+        <div class="flex items-center gap-2 font-medium">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+              d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z">
+            </path>
+          </svg>
+          <p>Info@puntoyaparte.com.sv</p>
+        </div>
+        <div class="flex items-center gap-2 font-medium">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+              d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z">
+            </path>
+          </svg>
+          <p>2235-3057</p>
+        </div>
+        <div class="flex items-center gap-2 font-medium">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+              d="M17 1.01 7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z">
+            </path>
+          </svg>
+          <p>+503 7835-4406</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2025 Punto&Aparte by KerbrumAgency - Todos los derechos
+        reservados.
+      </p>
+    </div>
+  </footer>
+
+  <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Volver arriba" title="Volver arriba">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>

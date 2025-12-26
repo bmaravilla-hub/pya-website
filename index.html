@@ -89,10 +89,13 @@
 
         <!-- Slide 2 - Especialistas en POP con Collage -->
         <div class="carousel-slide">
-          <div class="slide-bg" style="background-image: url('img/header/collage_1_V1.jpg')"></div>
+          <div class="slide-bg"
+            style="background-color: #545c34; background-image: url('img/header/collage_1_V1.png'); background-size: contain; background-position: center;">
+          </div>
           <div class="slide-content">
             <div class="text-content">
-              <h3 class="slide-title">Especialistas en POP</h3>
+              <h3 class="slide-title" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Especialistas
+                en POP</h3>
               <p class="slide-description"></p>
             </div>
           </div>
@@ -332,10 +335,7 @@
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">NUESTROS PROCESOS</h2>
-        <p class="section-subtitle">
-          Descubre nuestras iniciativas más destacadas y cómo estamos
-          transformando ideas en realidad
-        </p>
+
       </div>
 
       <!-- Expanding Cards Gallery -->
@@ -481,7 +481,15 @@
 
       <!-- Columna derecha (formulario) -->
       <div class="contacto-form">
-        <form action="">
+        <!-- Mensaje de feedback -->
+        <div id="formMessage" class="form-message" style="display: none;"></div>
+
+        <form id="contactForm">
+          <!-- Campos ocultos para Formspree -->
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde Punto y Aparte">
+          <input type="hidden" name="_replyto" id="_replyto">
+          <input type="hidden" name="_template" value="table">
+
           <div class="form-row">
             <div class="form-group">
               <label for="nombre">Nombre</label>
@@ -505,7 +513,12 @@
           <div class="form-group full">
             <label for="mensaje">Mensaje</label>
             <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
-            <button type="submit" class="btn-enviar">Enviar</button>
+            <button type="submit" class="btn-enviar">
+              <span class="btn-text">Enviar</span>
+              <span class="btn-spinner" style="display: none;">
+                <i class="bi bi-arrow-clockwise"></i>
+              </span>
+            </button>
           </div>
         </form>
       </div>
@@ -580,8 +593,12 @@
     <i class="bi bi-chevron-up"></i>
   </button>
 
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/contact-form.js"></script>
+  <script src="js/number-counter.js"></script>
 </body>
 
 </html>

@@ -252,6 +252,29 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Estilos específicos para la slide 2 */
+.carousel-slide:nth-child(2) {
+  align-items: flex-end;
+  padding-bottom: 0;
+}
+
+.carousel-slide:nth-child(2) .slide-bg {
+  top: 0;
+  height: 100%;
+  background-color: var(--color-blanco);
+}
+
+@media (min-width: 768px) {
+  .carousel-slide:nth-child(2) .slide-bg {
+    top: 0;
+    height: 100%;
+  }
+
+  .carousel-slide:nth-child(2) {
+    padding-bottom: 0;
+  }
+}
+
 .slide-title {
   font-size: 2.25rem;
   font-weight: bold;
@@ -1604,69 +1627,10 @@ body {
   cursor: pointer;
   transition: background 0.3s ease;
   margin-top: 0.5rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
 }
 
 .btn-enviar:hover {
   background: var(--color-hover);
-}
-
-.btn-enviar:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-/* Spinner animation */
-.btn-spinner i {
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Form feedback messages */
-.form-message {
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-  text-align: center;
-  animation: slideDown 0.3s ease-out;
-}
-
-.form-message.success {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-}
-
-.form-message.error {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .animate-left {

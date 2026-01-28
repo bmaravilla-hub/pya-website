@@ -2,7 +2,7 @@
 
 // Navbar scroll effect
 function initNavbarScroll() {
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const header = document.querySelector('.header-custom');
         if (window.scrollY > 100) {
             header.style.background = 'rgba(84, 92, 52, 0.95)';
@@ -109,7 +109,7 @@ class FeatureAnimation {
                 }
             });
         }, { threshold: 0.2 });
-        
+
         const list = document.querySelector('.features-list');
         if (list) observer.observe(list);
     }
@@ -132,40 +132,40 @@ class MobileMenu {
         this.mobileNav = document.querySelector('.mobile-nav-container');
         this.mobileLinks = document.querySelectorAll('.mobile-nav-link');
         this.isOpen = false;
-        
+
         this.init();
     }
-    
+
     init() {
         if (!this.menuBtn) return;
-        
+
         this.menuBtn.addEventListener('click', () => this.toggleMenu());
         this.mobileLinks.forEach(link => {
             link.addEventListener('click', () => this.closeMenu());
         });
     }
-    
+
     toggleMenu() {
         this.isOpen = !this.isOpen;
         this.isOpen ? this.openMenu() : this.closeMenu();
     }
-    
+
     openMenu() {
         this.mobileNav.classList.add('open');
         const menuIcon = this.menuBtn.querySelector('.menu-icon');
         if (menuIcon) menuIcon.style.transform = 'rotate(90deg)';
-        
+
         this.mobileLinks.forEach((link, index) => {
             link.style.transitionDelay = `${index * 100}ms`;
         });
     }
-    
+
     closeMenu() {
         this.mobileNav.classList.remove('open');
         const menuIcon = this.menuBtn.querySelector('.menu-icon');
         if (menuIcon) menuIcon.style.transform = 'rotate(0deg)';
         this.isOpen = false;
-        
+
         this.mobileLinks.forEach(link => {
             link.style.transitionDelay = '0ms';
         });
@@ -179,13 +179,13 @@ class ExpandingGallery {
         this.items = document.querySelectorAll('.gallery-item');
         this.init();
     }
-    
+
     init() {
         if (!this.gallery) return;
         this.setupIntersectionObserver();
         this.setupHoverEffects();
     }
-    
+
     setupIntersectionObserver() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -195,10 +195,10 @@ class ExpandingGallery {
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        
+
         observer.observe(this.gallery);
     }
-    
+
     animateItemsIn() {
         this.items.forEach((item, index) => {
             setTimeout(() => {
@@ -206,26 +206,26 @@ class ExpandingGallery {
             }, index * 100);
         });
     }
-    
+
     setupHoverEffects() {
         this.items.forEach(item => {
             item.addEventListener('mouseenter', () => {
                 this.resetAllItems();
                 item.classList.add('active');
             });
-            
+
             item.addEventListener('click', (e) => {
                 e.preventDefault();
                 this.resetAllItems();
                 item.classList.add('active');
             });
         });
-        
+
         this.gallery.addEventListener('mouseleave', () => {
             this.resetAllItems();
         });
     }
-    
+
     resetAllItems() {
         this.items.forEach(item => {
             item.classList.remove('active');
@@ -240,15 +240,15 @@ class ScrollToTop {
         this.scrollThreshold = 300;
         this.init();
     }
-    
+
     init() {
         if (!this.button) return;
-        
+
         window.addEventListener('scroll', () => this.toggleVisibility());
         this.button.addEventListener('click', () => this.scrollToTop());
         this.toggleVisibility();
     }
-    
+
     toggleVisibility() {
         if (window.pageYOffset > this.scrollThreshold) {
             this.button.classList.add('show');
@@ -256,7 +256,7 @@ class ScrollToTop {
             this.button.classList.remove('show');
         }
     }
-    
+
     scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -276,7 +276,7 @@ function initSmoothScroll() {
 }
 
 // Initialize everything
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initNavbarScroll();
     initSmoothScroll();
     new MobileMenu();
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function() {
     new NumberCounter();
     new FeatureAnimation();
 
-    
+
     // Add initial styles for animations
     const style = document.createElement('style');
     style.textContent = `

@@ -15,6 +15,23 @@ document.addEventListener('DOMContentLoaded', function () {
         radioInputs[0].checked = true;
         reorderThumbnails(radioInputs[0], radioInputs);
     }
+
+    // Inject Floating Shapes for background decoration
+    const gallerySection = document.querySelector('.gallery-section');
+    if (gallerySection && !gallerySection.querySelector('.floating-shape')) {
+        // Ensure relative positioning
+        if (getComputedStyle(gallerySection).position === 'static') {
+            gallerySection.style.position = 'relative';
+            gallerySection.style.overflow = 'hidden';
+        }
+
+        const shapes = ['shape-1', 'shape-2', 'shape-3', 'shape-logo', 'shape-logo-2'];
+        shapes.forEach(shapeClass => {
+            const div = document.createElement('div');
+            div.classList.add('floating-shape', shapeClass);
+            gallerySection.insertBefore(div, gallerySection.firstChild);
+        });
+    }
 });
 
 function reorderThumbnails(targetEl, allRadios) {

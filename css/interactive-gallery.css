@@ -1,11 +1,13 @@
 /* Interactive Thumbnail Gallery Styles */
 
 .gallery-wrapper {
-    width: 70vmin;
-    height: 90vmin;
+    width: 95vw;
+    height: 85vh;
     margin: 0 auto;
-    max-width: 800px;
-    max-height: 1100px;
+    max-width: 1600px;
+    max-height: 95vh;
+    position: relative;
+    z-index: 10;
 }
 
 .thumbnails-container {
@@ -103,21 +105,115 @@
 }
 
 :not(:checked)+.thumbnail-item img {
+    object-fit: contain;
+    /* ensure full view */
     transform: scale(0.9);
 }
 
+/* Floating Shapes Animation */
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+    animation: floatShape 20s infinite linear;
+}
+
+.floating-shape.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--color-verde);
+    top: -10%;
+    left: -10%;
+    animation-duration: 25s;
+}
+
+.floating-shape.shape-2 {
+    width: 200px;
+    height: 200px;
+    background: #656d4a;
+    bottom: 10%;
+    right: -5%;
+    animation-duration: 18s;
+    animation-direction: reverse;
+}
+
+.floating-shape.shape-3 {
+    width: 150px;
+    height: 150px;
+    border: 2px solid var(--color-verde);
+    top: 40%;
+    right: 15%;
+    background: transparent;
+    animation-duration: 22s;
+}
+
+.floating-shape.shape-logo {
+    width: 400px;
+    height: 400px;
+    background-image: url('../img/isotipo-web.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 20%;
+    left: 20%;
+    opacity: 0.15;
+    /* Slightly more visible than shapes */
+    animation-duration: 30s;
+    background-color: transparent;
+    border-radius: 0;
+    /* Reset border radius for image */
+}
+
+.floating-shape.shape-logo-2 {
+    width: 350px;
+    height: 350px;
+    background-image: url('../img/isotipo-web.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: 15%;
+    right: 10%;
+    opacity: 0.12;
+    animation-duration: 35s;
+    animation-direction: reverse;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+@keyframes floatShape {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(30px, -50px) rotate(120deg);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) rotate(240deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+/* Responsive adjustments */
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .gallery-wrapper {
-        width: 90vw;
-        height: 70vh;
+        width: 95vw;
+        height: 80vh;
         min-height: 500px;
     }
 }
 
 @media (min-width: 1200px) {
     .gallery-wrapper {
-        width: 65vmin;
-        height: 85vmin;
+        width: 90vw;
+        height: 90vh;
+        max-width: 1800px;
     }
 }

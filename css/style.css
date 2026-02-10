@@ -697,7 +697,7 @@ body {
 }
 
 .nosotros-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 500;
   color: white;
   margin-bottom: 2rem;
@@ -1051,6 +1051,9 @@ body {
   position: relative;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .servicio-detalle-card:hover {
@@ -1073,7 +1076,8 @@ body {
 
 /* Imágenes para servicios detalle */
 .servicio-detalle-card .servicio-imagen {
-  width: 200px;
+  width: 100%;
+  max-width: 260px;
   height: 310px;
   margin: 0 auto;
   border-radius: 0%;
@@ -1087,11 +1091,15 @@ body {
 .servicio-detalle-card .servicio-imagen img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .servicio-detalle-card:hover .servicio-imagen {
   transform: scale(1.1);
+}
+
+.servicio-content {
+  margin-top: auto;
 }
 
 .servicio-content p {
@@ -1099,7 +1107,6 @@ body {
   line-height: 1.6;
   margin-bottom: 2rem;
   font-size: 1rem;
-
 }
 
 .servicio-btn {
@@ -1542,6 +1549,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0 auto 2rem;
+  overflow: hidden;
 }
 
 .contacto-logo {
@@ -1634,6 +1642,42 @@ body {
 
 .btn-enviar:hover {
   background: var(--color-hover);
+}
+
+.form-response {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: none;
+  font-weight: 500;
+  text-align: center;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.form-response.success {
+  display: block;
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.form-response.error {
+  display: block;
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-left {

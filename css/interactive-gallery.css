@@ -14,46 +14,53 @@
     width: 100%;
     height: 100%;
     position: relative;
-    --barH: 10%;
-    /* active zone height = 100% - barH */
-    perspective: 100px;
-    perspective-origin: center center;
-    transform-style: preserve-3d;
-    pointer-events: none;
+    --barH: 12%;
+    /* Slightly taller for better visibility */
+    --gap: 15px;
+    /* Vertical gap between main image and thumbnails */
+    /* active zone height = 100% - barH - gap */
+    /* perspective: 100px; - Removed to prevent visual gaps */
+    /* perspective-origin: center center; - Removed */
+    /* transform-style: preserve-3d; - Removed */
+    overflow: hidden;
+    /* Ensure clean edges */
+    display: flex;
+    justify-content: center;
+    /* Center the thumbnails */
+    align-items: flex-end;
+    /* Align to bottom */
+    gap: 4px;
+    /* Small gap between thumbnails */
 }
 
 .thumbnails-container::after {
-    /* the plate */
-    content: "";
-    display: block;
-    width: 100%;
-    height: 15px;
-    position: absolute;
-    bottom: 0;
-    background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.1));
-    transform: rotateX(90deg) scaleX(1.2);
-    transform-origin: bottom center;
+    /* the plate - REMOVED SHADOW AS REQUESTED */
+    content: none;
+    display: none;
 }
 
 .thumbnail-item {
     --w: 20%;
     display: block;
-    width: var(--w);
+    /* width: var(--w); - Overridden for flexbox */
     height: var(--barH);
-    position: absolute;
+    /* position: absolute; - Overridden for flexbox */
     bottom: 0;
-    left: var(--l);
+    /* left: var(--l); - Overridden for flexbox */
     transform-origin: top left;
     transition: transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 1s;
 }
 
 .thumbnail-item img {
     display: block;
-    width: 100%;
+    width: auto;
+    /* Natural width */
     height: 100%;
-    object-fit: cover;
-    transform: scale(0.9);
-    /* create gaps */
+    /* Fill height of bar */
+    object-fit: contain;
+    /* Show full image */
+    transform: scale(1);
+    /* create gaps removed */
 }
 
 [type="radio"].gallery-radio {
@@ -61,18 +68,25 @@
 }
 
 :checked+label.thumbnail-item {
+    position: absolute;
+    /* Take out of flow to cover */
     left: 0;
-    bottom: var(--barH);
-    height: calc(100% - var(--barH));
+    bottom: calc(var(--barH) + var(--gap));
+    width: 100% !important;
+    /* Force full width */
+    height: calc(100% - var(--barH) - var(--gap));
     box-shadow: 0 0 0 transparent;
     animation: expandAnim 2s 1;
     transition: transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 0s;
     border-radius: 20px !important;
     overflow: hidden !important;
+    z-index: 20;
 }
 
 :checked+label.thumbnail-item img {
     object-fit: contain;
+    width: 100%;
+    /* Full width for active image */
     border-radius: 20px !important;
     transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
 }
@@ -93,21 +107,40 @@
 
 /* Inactive labels */
 :not(:checked)+.thumbnail-item {
-    transform: translate3d(0, 0, -5px);
+    position: relative;
+    /* In normal flow */
+    width: auto !important;
+    /* content based width */
+    left: auto !important;
+    /* ignore abs positioning */
+    flex: 0 0 auto;
+    /* don't shrink */
+    margin: 0;
+    /* No gaps */
+    /* transform: translate3d(0, 0, -5px); - Removed to prevent gaps */
+    transform: none;
     pointer-events: auto;
+    /* border-radius: 8px; - Removed as requested */
+    border-radius: 0;
+    overflow: hidden;
+    margin: 0;
 }
 
 :not(:checked)+.thumbnail-item:hover {
-    transform: translate3d(0, -7px, -5px);
-    box-shadow: 0 30px 30px -25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-7px);
+    /* Simplified hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 0s;
+    transition: transform 0.3s, bottom 0.6s, left 0.6s, width 0.3s;
 }
 
 :not(:checked)+.thumbnail-item img {
     object-fit: contain;
+    /* Ensure they fit nicely */
+    width: auto;
+    height: 100%;
     /* ensure full view */
-    transform: scale(0.9);
+    transform: scale(1);
 }
 
 /* Floating Shapes Animation */

@@ -1,0 +1,38 @@
+service: pya-website-backend
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  deploymentBucket:
+    name: serverless-kerbrum-deployments
+    serverSideEncryption: AES256
+
+package:
+  individually: true
+  exclude:
+    - .git/**
+    - .vscode/**
+    - img/**
+    - pages/**
+    - css/**
+    - node_modules/aws-sdk/** # AWS SDK ya está en Lambda runtime
+  include:
+    - img/header/LOGOO.png
+
+functions:
+  api:
+    handler: server.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+
+plugins:
+  - serverless-offline

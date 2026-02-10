@@ -139,7 +139,8 @@ body {
 /* Expanding Gallery */
 .gallery-section {
     padding: 5rem 0;
-    background: var(--color-fondo);
+    background: var(--color-blanco);
+    overflow: hidden;
 }
 
 .gallery-title {

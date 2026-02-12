@@ -3,7 +3,6 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 
-// Captura de errores globales para evitar cierres silenciosos
 process.on('uncaughtException', (err) => {
     console.error('>>> [CRITICAL] Uncaught Exception:', err);
 });
@@ -19,20 +18,17 @@ console.log('>>> [INFO] Iniciando servidor con lógica modular de correos...');
 console.log(`>>> [CONFIG] EMAIL_USER: ${process.env.EMAIL_USER}`);
 console.log(`>>> [CONFIG] SMTP_TO: ${process.env.SMTP_TO}`);
 
-// Log global para verificar que llegan las peticiones
 app.use((req, res, next) => {
     console.log(`>>> [REQUEST] ${req.method} ${req.url} desde ${req.headers.origin || 'desconocido'}`);
     next();
 });
 
-// Ruta de salud
 app.get('/', (req, res) => {
     res.send('Servidor de Punto&Aparte funcionando correctamente.');
 });
 
-// Configuración de CORS más permisiva para evitar bloqueos
 app.use(cors({
-    origin: '*', // Permitir cualquier origen temporalmente para pruebas
+    origin: '*',
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
@@ -78,10 +74,8 @@ app.post('/api/contact', async (req, res) => {
 
 const serverless = require('serverless-http');
 
-// Exportar handler para AWS Lambda
 module.exports.handler = serverless(app);
 
-// Solo iniciar servidor local si no estamos en Lambda
 if (require.main === module) {
     app.listen(PORT, () => {
         console.log(`Server running on http://localhost:${PORT}`);

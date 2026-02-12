@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 
 /**
- * Genera el encabezado del correo con el estilo de Punto&Aparte
+ * Genera el encabezado del correo
  */
 const generateEmailHeader = () => {
     return `

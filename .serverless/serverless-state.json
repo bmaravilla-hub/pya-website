@@ -8,6 +8,15 @@
       "name": "aws",
       "runtime": "nodejs18.x",
       "region": "us-east-1",
+      "timeout": 30,
+      "environment": {
+        "SMTP_HOST": "smtp.gmail.com",
+        "SMTP_PORT": "465",
+        "EMAIL_USER": "ventas@kerbrumagency.com",
+        "EMAIL_PASS": "jvqa biun conx rtwn",
+        "SMTP_TO": "blanca@kerbrumagency.com",
+        "SMTP_FROM": "ventas@kerbrumagency.com"
+      },
       "deploymentBucket": "serverless-kerbrum-deployments",
       "stage": "dev",
       "versionFunctions": true,
@@ -108,13 +117,23 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-kerbrum-deployments",
-                "S3Key": "serverless/pya-website-backend/dev/1770698444745-2026-02-10T04:40:44.745Z/api.zip"
+                "S3Key": "serverless/pya-website-backend/dev/1770874294796-2026-02-12T05:31:34.796Z/api.zip"
               },
               "Handler": "server.handler",
               "Runtime": "nodejs18.x",
               "FunctionName": "pya-website-backend-dev-api",
               "MemorySize": 1024,
-              "Timeout": 6,
+              "Timeout": 30,
+              "Environment": {
+                "Variables": {
+                  "SMTP_HOST": "smtp.gmail.com",
+                  "SMTP_PORT": "465",
+                  "EMAIL_USER": "ventas@kerbrumagency.com",
+                  "EMAIL_PASS": "jvqa biun conx rtwn",
+                  "SMTP_TO": "blanca@kerbrumagency.com",
+                  "SMTP_FROM": "ventas@kerbrumagency.com"
+                }
+              },
               "Role": {
                 "Fn::GetAtt": [
                   "IamRoleLambdaExecution",
@@ -126,14 +145,14 @@
               "ApiLogGroup"
             ]
           },
-          "ApiLambdaVersionAPIS8OAbKOnAPmQPomRAwb8qdwfEea7Bi2qlLZxRf8": {
+          "ApiLambdaVersionklhDZemUbddGgOsC44OPEMcOblz2ZMjj9m2Pu1tv64": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "49zD5M8RKM9CPLjP7eWcxFCR2cwP96tvg1COz2MyBe8="
+              "CodeSha256": "YtXOieZTkKVAUPhlI5gosHHnjsgIenQb4zsB+7PBEL8="
             }
           },
           "ApiGatewayRestApi": {
@@ -351,7 +370,7 @@
               "ApiLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1770698409107": {
+          "ApiGatewayDeployment1770874271023": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -414,7 +433,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersionAPIS8OAbKOnAPmQPomRAwb8qdwfEea7Bi2qlLZxRf8"
+              "Ref": "ApiLambdaVersionklhDZemUbddGgOsC44OPEMcOblz2ZMjj9m2Pu1tv64"
             },
             "Export": {
               "Name": "sls-pya-website-backend-dev-ApiLambdaFunctionQualifiedArn"
@@ -512,10 +531,10 @@
           "artifact": "/Users/user/Desktop/Trabajo/pya-website/.serverless/api.zip"
         },
         "memory": 1024,
-        "timeout": 6,
+        "timeout": 30,
         "runtime": "nodejs18.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersionAPIS8OAbKOnAPmQPomRAwb8qdwfEea7Bi2qlLZxRf8"
+        "versionLogicalId": "ApiLambdaVersionklhDZemUbddGgOsC44OPEMcOblz2ZMjj9m2Pu1tv64"
       }
     },
     "configValidationMode": "warn",
@@ -541,7 +560,7 @@
         ],
         "artifactsS3KeyDirname": "serverless/pya-website-backend/dev/code-artifacts",
         "deploymentBucket": "serverless-kerbrum-deployments",
-        "artifactDirectoryName": "serverless/pya-website-backend/dev/1770698444745-2026-02-10T04:40:44.745Z"
+        "artifactDirectoryName": "serverless/pya-website-backend/dev/1770874294796-2026-02-12T05:31:34.796Z"
       },
       "functions": {
         "$ref": "$[\"service\"][\"functions\"]"
@@ -555,7 +574,7 @@
   },
   "package": {
     "individually": true,
-    "artifactDirectoryName": "serverless/pya-website-backend/dev/1770698444745-2026-02-10T04:40:44.745Z",
+    "artifactDirectoryName": "serverless/pya-website-backend/dev/1770874294796-2026-02-12T05:31:34.796Z",
     "artifact": ""
   }
 }

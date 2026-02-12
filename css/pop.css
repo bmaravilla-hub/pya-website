@@ -128,8 +128,8 @@ body {
 }
 
 .description-image img {
-    width: 70%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
     display: block;
     border-radius: 1rem;

@@ -1,3 +1,5 @@
 window.APP_CONFIG = {
-    API_URL: "https://i4xe9n3ui6.execute-api.us-east-1.amazonaws.com/dev/api/contact"
+    EMAILJS_SERVICE_ID: 'service_p3fy7n6',
+    EMAILJS_TEMPLATE_ID: 'contactopya',
+    EMAILJS_PUBLIC_KEY: 'BRJ2xtGrQeoDenZLx',
 };

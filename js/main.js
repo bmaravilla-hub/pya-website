@@ -779,7 +779,7 @@ class ExpandingGallery {
     }
 }
 
-// NUEVA CLASE: Contact Form Handler
+// CLASE: Contact Form Handler (EmailJS)
 class ContactForm {
     constructor() {
         this.form = document.querySelector('.contacto-form form');
@@ -790,75 +790,66 @@ class ContactForm {
     init() {
         if (!this.form) return;
 
+        // Inicializar EmailJS con la public key de config.js
+        const cfg = window.APP_CONFIG || {};
+        if (cfg.EMAILJS_PUBLIC_KEY) {
+            emailjs.init({ publicKey: cfg.EMAILJS_PUBLIC_KEY });
+        } else {
+            console.warn('EmailJS: PUBLIC_KEY no configurada en config.js');
+        }
+
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
     }
 
     async handleSubmit(e) {
         e.preventDefault();
 
-        // Get form data
-        const formData = new FormData(this.form);
-        const data = Object.fromEntries(formData.entries());
+        // Validación básica
+        const nombre = this.form.querySelector('#nombre')?.value.trim();
+        const email = this.form.querySelector('#email')?.value.trim();
+        const mensaje = this.form.querySelector('#mensaje')?.value.trim();
 
-        // Validate (basic)
-        if (!data.nombre || !data.email || !data.mensaje) {
+        if (!nombre || !email || !mensaje) {
             alert('Por favor completa los campos obligatorios.');
             return;
         }
 
-        // Show loading state
+        // Mostrar estado de carga
         if (this.submitBtn) {
             this.originalBtnText = this.submitBtn.innerText;
             this.submitBtn.innerText = 'Enviando...';
             this.submitBtn.disabled = true;
         }
 
+        const responseElement = document.getElementById('form-response');
+        if (responseElement) {
+            responseElement.style.display = 'none';
+            responseElement.className = 'form-response';
+        }
+
         try {
-            // Send to backend - URL desde config.js
-            const apiEndpoint = window.APP_CONFIG ? window.APP_CONFIG.API_URL : '/api/contact';
+            const cfg = window.APP_CONFIG || {};
+            const serviceId = cfg.EMAILJS_SERVICE_ID || '';
+            const templateId = cfg.EMAILJS_TEMPLATE_ID || '';
 
-            const response = await fetch(apiEndpoint, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
+            // Enviar correo directamente desde el navegador usando EmailJS
+            await emailjs.sendForm(serviceId, templateId, this.form);
 
-            const responseElement = document.getElementById('form-response');
             if (responseElement) {
-                responseElement.style.display = 'none';
-                responseElement.className = 'form-response';
+                responseElement.innerText = '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.';
+                responseElement.classList.add('success');
+                responseElement.style.display = 'block';
             }
-
-            const result = await response.json();
-
-            if (result.success) {
-                if (responseElement) {
-                    responseElement.innerText = result.message || '¡Mensaje enviado con éxito!';
-                    responseElement.classList.add('success');
-                    responseElement.style.display = 'block';
-                }
-                this.form.reset();
-            } else {
-                if (responseElement) {
-                    const detailMsg = result.details ? `: ${result.details}` : '';
-                    responseElement.innerText = (result.message || 'Error al enviar') + detailMsg;
-                    responseElement.classList.add('error');
-                    responseElement.style.display = 'block';
-                }
-            }
+            this.form.reset();
 
         } catch (error) {
-            console.error('Error:', error);
-            const responseElement = document.getElementById('form-response');
+            console.error('EmailJS error:', error);
             if (responseElement) {
-                responseElement.innerText = 'Error en el envío: ' + error.message;
+                responseElement.innerText = 'Error al enviar el mensaje. Por favor intenta de nuevo o contáctanos directamente.';
                 responseElement.classList.add('error');
                 responseElement.style.display = 'block';
             }
         } finally {
-            // Restore button
             if (this.submitBtn) {
                 this.submitBtn.innerText = this.originalBtnText;
                 this.submitBtn.disabled = false;

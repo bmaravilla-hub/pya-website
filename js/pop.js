@@ -1,4 +1,4 @@
-// JavaScript para Rotulación e Instalación
+// JavaScript para Instalación y Rotulación
 
 // Navbar scroll effect
 function initNavbarScroll() {
